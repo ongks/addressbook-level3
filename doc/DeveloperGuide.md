@@ -45,8 +45,10 @@ Priority | As a ... | I want to ... | So that I can...
 `* * *` | user | add a new person |
 `* * *` | user | delete a person | remove entries that I no longer need
 `* * *` | user | find a person by name | locate details of persons without having to go through the entire list
+`* * *` | user | edit an existing person's contact details | update his details when he/she changes them
 `* *` | user | hide [private contact details](#private-contact-detail) by default | to minimize chance of someone else seeing them by accident
 `*` | user with many persons in the address book | sort persons by name | locate a person easily
+`*` | user | edit a person's tags | identify a group of people easily
 
 
 ## Appendix B : Use Cases
@@ -74,12 +76,32 @@ Use case ends.
 > 3a1. AddressBook shows an error message <br>
   Use case resumes at step 2
 
+#### Use case: Edit tag
+
+**MSS**
+
+1. User requests to list all persons with a given tag
+2. AddressBook shows user list of persons
+3. User requests to change a tag's name
+4. AddressBook updates all such tags
+Use case ends.
+
+**Extensions**
+
+2a. The list of persons with the given tag is empty.
+
+> 2a1. AddressBook informs user list is empty.
+  Use case ends.
+
 ## Appendix C : Non Functional Requirements
 
 1. Should work on any [mainstream OS](#mainstream-os) as long as it has Java 8 or higher installed.
 2. Should be able to hold up to 1000 persons.
 3. Should come with automated unit tests and open source code.
 4. Should favor DOS style commands over Unix-style commands.
+5. Should respond to commands within 1000ms.
+6. Should provide backup of most recent list in case user accidentally clears current list.
+7. Should be user-friendly to users unfamiliar with the use of CLI.
 
 ## Appendix D : Glossary
 
